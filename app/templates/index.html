@@ -1,11 +1,13 @@
-<!-- comentário-->
-<html>
-    <head>  
-   
-    </head>
-   
-    <body>
-        <h1>Hello World</h1>
-    </body> 
+{% extends "base.html" %}
+    
+{% block content %}
+<h1>Olá, {{ user.username }}!</h1>
+<div>
+    {% for post in posts %}
+        <p>{{ post.author.username }} Disse: <b>{{ post.body }}</b></p>
+    {% else %}
+        <p>Desculpa, sem posts novos!</p>
+    {% endfor %}
+</div>
+{% endblock %}
  
-</html>
